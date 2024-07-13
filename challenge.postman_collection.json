@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "5d80a30d-844d-42ff-8254-a38f6b1c3fbf",
+		"name": "challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25379593"
+	},
+	"item": [
+		{
+			"name": "cripto",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjMiLCJpYXQiOjE3MDc3ODIxMzQsImV4cCI6MTcwNzc4NTczNH0.GpBxZt1TWW81psL6yHXXclTTCq7Y1Iz1zS0K858J0Eg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"bitcoin\",\n    \"currentPrice\": 42000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/flixxo-app/crypto/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"flixxo-app",
+								"crypto",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjMiLCJpYXQiOjE3MDc3ODI1MTYsImV4cCI6MTcwNzc4NjExNn0.yXpE9MQshNAeaRLfjrNt5fxj6t2gCJjvqNAzvVfXXpI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPrice\": 34000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/flixxo-app/crypto/update/:name",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"flixxo-app",
+								"crypto",
+								"update",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "bitcoin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/flixxo-app/crypto/get-all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"flixxo-app",
+								"crypto",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create massive",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  { \"name\": \"bitcoin\", \"currentPrice\": 42000 },\n  { \"name\": \"ethereum\", \"currentPrice\": 3800 },\n  { \"name\": \"litecoin\", \"currentPrice\": 180 },\n  { \"name\": \"ripple\", \"currentPrice\": 1.2 },\n  { \"name\": \"cardano\", \"currentPrice\": 2.5 },\n  { \"name\": \"stellar\", \"currentPrice\": 0.35 },\n  { \"name\": \"dogecoin\", \"currentPrice\": 0.0028 },\n  { \"name\": \"polkadot\", \"currentPrice\": 30 },\n  { \"name\": \"chainlink\", \"currentPrice\": 25 },\n  { \"name\": \"tezos\", \"currentPrice\": 4.8 },\n  { \"name\": \"eos\", \"currentPrice\": 6 },\n  { \"name\": \"monero\", \"currentPrice\": 150 },\n  { \"name\": \"tron\", \"currentPrice\": 0.08 },\n  { \"name\": \"neo\", \"currentPrice\": 40 },\n  { \"name\": \"dash\", \"currentPrice\": 120 },\n  { \"name\": \"cosmos\", \"currentPrice\": 30 },\n  { \"name\": \"vechain\", \"currentPrice\": 0.12 },\n  { \"name\": \"filecoin\", \"currentPrice\": 55 },\n  { \"name\": \"zilliqa\", \"currentPrice\": 0.05 },\n  { \"name\": \"loopring\", \"currentPrice\": 1.5 }\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/flixxo-app/crypto/create-massive",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"flixxo-app",
+								"crypto",
+								"create-massive"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "price",
+			"item": [
+				{
+					"name": "get by cripto id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/flixxo-app/price/get-by-cryptoId/:cryptoId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"flixxo-app",
+								"price",
+								"get-by-cryptoId",
+								":cryptoId"
+							],
+							"variable": [
+								{
+									"key": "cryptoId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get last price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/flixxo-app/price/get-lastPrice-from-cryptoId/:cryptoId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"flixxo-app",
+								"price",
+								"get-lastPrice-from-cryptoId",
+								":cryptoId"
+							],
+							"variable": [
+								{
+									"key": "cryptoId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/flixxo-app/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"flixxo-app",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/flixxo-app/health",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"flixxo-app",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

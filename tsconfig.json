@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "types": ["node", "express", "jest"],
+    "esModuleInterop": true,
+    "target": "es6",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "rootDir": ".",
+    "strict": true,
+    "noEmit": false,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/**.ts",
+    "tests/**/**.ts",
+    "playground/**/**.ts", "src/prices/infrastructure/outbound/price-model.ts", "src/crypto/infrastructure/outbound/crypto-model.ts", "src/common/sequelize-connection.js", "express.d.ts",
+  ],
+  "exclude": ["node_modules"]
+}
