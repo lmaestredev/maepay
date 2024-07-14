@@ -1,7 +1,7 @@
 <h1 align="center">Maepay</h1>
 
 <p align="center">
-  I will explain you how the project works 
+  I will explain you, how the project works 
 </p>
 
 ## Table of Contents
@@ -10,7 +10,8 @@
 - [Building](#building)
 - [Testing](#testing)
 - [Linting](#linting)
-- [Contributing](#contributing)
+- [Running](#running)
+- [Syncdb](#syncdb)
 
 ## Installing
 
@@ -25,11 +26,6 @@ npm install
 
 ```bash
 npm run build
-```
-## Running
-
-```bash
-npm run start
 ```
 
 ## Testing
@@ -53,3 +49,28 @@ Fix lint issues automatically
 ```bash
 npm run lint:fix
 ```
+
+## Running
+
+Run on production
+```bash
+npm run start
+```
+
+Run on local
+```bash
+npm run start:dev
+```
+## Syncdb
+
+Synchronize database app on production:
+
+1 - Stop the app:
+```bash
+ctrl + c
+```  
+
+2 - Run this command:
+```bash
+npm run syncdb
+```  
