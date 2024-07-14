@@ -11,7 +11,7 @@ import { priceRouter } from "./price/infrastructure/inbound/routers/price-router
 
 dotEnvConfig();
 const { port } = config.server;
-const baseUri = "/api/v1/flixxo-app";
+const baseUri = "/api/v1/maepay";
 
 export class Server {
   private app: Application;
@@ -22,12 +22,12 @@ export class Server {
     this.port = port;
   }
 
-  async dbConnection(): Promise<void> {
-    await connect();
+  async dbConnection(sync = false): Promise<void> {
+    await connect(sync);
   }
 
-  async start(): Promise<void> {
-    await this.dbConnection();
+  async start(sync: boolean): Promise<void> {
+    await this.dbConnection(sync);
 
     // Middlewares
     // this.app.use(bodyParser.json());
@@ -39,7 +39,7 @@ export class Server {
     this.app.use(`${baseUri}/price`, priceRouter);
     this.app.use(`${baseUri}/auth`, authRouter);
 
-    await this.app.listen(this.port, async () => {
+    this.app.listen(this.port, async () => {
       console.log(`[APP] - Starting application on port ${this.port}`);
     });
   }

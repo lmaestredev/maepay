@@ -3,6 +3,7 @@ export class Price {
     public readonly price: number,
     public readonly cryptoId?: number,
     public readonly createdAt?: Date,
-    public readonly id?: number
+    public readonly id?: number,
+    public readonly test?: string
   ) {}
 }
